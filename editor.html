@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="text/javascript" src="res/jquery-1.js"></script>
+    <script type="text/javascript" src="res/jquery-ui.js"></script>
+    <script type="text/javascript" src="res/jquery_003.js"></script>
+    <script type="text/javascript" src="res/jquery_002.js"></script>
+    <script type="text/javascript" src="res/jquery.js"></script>
+    <script type="text/javascript" src="res/jquery_006.js"></script>
+    <script type="text/javascript" src="res/jquery_005.js"></script>
+    <script type="text/javascript" src="res/jquery_007.js"></script>
+    <script type="text/javascript" src="res/jquery_004.js"></script>
+    <script type="text/javascript" src="res/system.js"></script>
+    <link href="res/jquery-ui.css" type="text/css" rel="stylesheet">
+    <link href="res/colorpicker.css" type="text/css" rel="stylesheet">
+    <link href="res/styles.css" type="text/css" rel="stylesheet">
+    <link href="res/stylesheet.css" type="text/css" rel="stylesheet">
+    <script type="text/javascript">
+        function submitCSS() {
+		var json = escape(encodeURIComponent(document.getElementById("htmldata").value));
+		var name = document.getElementById("user").value;
+		var title = document.getElementById("title").value;
+		window.location = "http://evolvejs.tk/designs/newDesign.php?content=" + json + "&un=" + name + "&title=" + title;
+		return 0;
+	}
+    </script>
+    </head>
+<body>
+
+
+<div class="block_params" style="display: none;" title="Block properties">
+    <div>Title: <input name="name" type="text"></div>
+    <div>Width: <input name="width" type="text"> <select>
+        <option value="" selected="selected"></option>
+        <option value="px">px</option>
+        <option value="%">%</option>
+        <option value="em">em</option>
+    </select></div>
+    <div>Height: <input name="height" type="text"> <select>
+        <option value="" selected="selected"></option>
+        <option value="px">px</option>
+        <option value="%">%</option>
+        <option value="em">em</option>
+    </select></div>
+    <div>Margin: <input name="margin" type="text"></div>
+    <div>Padding: <input name="padding" type="text"></div>
+    <div>Class name: <input name="class" type="text"></div>
+</div>
+<div class="block_new" style="display: none;height: 120px;" title="Create new block">
+    <div style="margin-left: 48px;">DIV class= <input name="name" type="text"></div>
+    <div>Background color= <input name="color" type="text"></div>
+    <div style="padding-top: 10px;"><i>Press [Save] then drag'n'drop block on any position on screen until you see area in blue color</i></div>
+</div>
+<div class="work_area">
+    <div class="ekran x1 r1024x768">
+        <div class="browser">
+            <div class="navigation ui-widget ui-widget-content ui-widget-header">
+                <span style="font-size: 15px;">↓</span><sup>Start here</sup> |  Block resolution:&nbsp;<select class="resolution">
+                <!--<option value="0x0">Window width</option> -->
+                <option value="1024x768" selected="selected">1024*768</option>
+                <!--<option value="1280x1024">1280*1024</option> -->
+            </select>&nbsp;
+            
+                <!--Масштаб:&nbsp;<select class="scale"><option value="1">1:1</option><option value="2">2:1</option></select>-->
+                <div style="float: right;"><a href="#" class="save_layout" style="color: green;font-weight: bolder;">→ Generate CSS code ←</a></div>
+            </div>
+            <div class="window">
+                <div class="body" title="body" style="background-color: rgb(255, 255, 255);">
+                    <div class="name" style="display: block;"><span>body</span></div>
+                    <div class="da_blocks" style="display: block;">
+                        <div class="top ui-droppable"></div>
+                        <div class="left ui-droppable"></div>
+                        <div class="right ui-droppable"></div>
+                        <div class="bottom ui-droppable"></div>
+                    </div>
+                    <ul class="uimenu ui-menubar ui-widget-header ui-helper-clearfix" role="menubar">
+                        <li class="ui-menubar-item" role="presentation">
+                            <a href="#" class="ui-button ui-widget ui-menubar-link ui-state-default ui-button-text-icon-secondary" role="menuitem" aria-haspopup="true"><span class="ui-button-text"><span class="ui-button-icon-primary ui-icon ui-icon-gear"></span></span><span class="ui-button-icon-secondary ui-icon ui-icon-triangle-1-s"></span></a>
+                            <ul class="uimenu-ul ui-menu ui-widget ui-widget-content ui-corner-all" style="position: absolute; display: none;" id="ui-menu-0" role="menu" tabindex="0" aria-hidden="true" aria-expanded="false">
+                                <li class="ui-menu-item" role="presentation"><a href="#" class="add_block ui-corner-all" tabindex="-1" role="menuitem" id="ui-menu-0-0">Add new block</a></li>
+                                <li class="ui-menu-item" role="presentation"><a href="#" class="params_block ui-corner-all" tabindex="-1" role="menuitem" id="ui-menu-0-1">Block parameters</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div style="margin:auto;width:728px;">
+</div>
+
+<div class="ui-dialog ui-widget ui-widget-content ui-corner-all ui-draggable ui-resizable" style="display: none; outline: 0px none; z-index: 1000; position: absolute;" tabindex="-1" role="dialog" aria-labelledby="ui-dialog-title-1"><div class="ui-dialog-titlebar ui-widget-header ui-corner-all ui-helper-clearfix"><span class="ui-dialog-title" id="ui-dialog-title-1">Your layout code</span><a href="#" class="ui-dialog-titlebar-close ui-corner-all" role="button"><span class="ui-icon ui-icon-closethick">close</span></a></div><div class="css_rules ui-dialog-content ui-widget-content" style="">
+    <form id="generate_archive" method="post" action="archive.php">
+    <input id="archive_type" name="type" value="zip" type="hidden">
+    <div id="code-tabs" class="ui-tabs ui-widget ui-widget-content ui-corner-all">
+	<div id="html-code" class="ui-tabs-panel ui-widget-content ui-corner-bottom" style="display: block;">
+            <textarea id="htmldata" name="html" class="html"></textarea>
+        	    <form> <input type="text" id="user" placeholder="username">
+		   <input type="text" id="title" placeholder="title">
+	    </form>
+            <button type="button" onclick="submitCSS();">Submit</button>
+        </div>
+    </div>
+    </form>
+</div><div class="ui-resizable-handle ui-resizable-n"></div><div class="ui-resizable-handle ui-resizable-e"></div><div class="ui-resizable-handle ui-resizable-s"></div><div class="ui-resizable-handle ui-resizable-w"></div><div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se ui-icon-grip-diagonal-se" style="z-index: 1001;"></div><div class="ui-resizable-handle ui-resizable-sw" style="z-index: 1002;"></div><div class="ui-resizable-handle ui-resizable-ne" style="z-index: 1003;"></div><div class="ui-resizable-handle ui-resizable-nw" style="z-index: 1004;"></div></div></body></html>
