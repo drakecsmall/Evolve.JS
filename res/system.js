@@ -330,7 +330,7 @@ $(document).ready(function() {
             var $classes = $(this).attr("class").replace(/(ui-([\w-])+(\s|\b))/g, "").trim();
             var $style = "", $level = $(this).parents().length;
             var $parent = $(this).parent().parent();
-            var $content_block = $("<div class=\"content\"></div>");
+	    var $content_block = $("<div class=\"content\"></div>");
             var $childs = $(this).children("div.left_block, div.right_block, div.top_block, div.bottom_block, div.center_block");
             $(this).unbind();
             if ($childs.length == 0)
