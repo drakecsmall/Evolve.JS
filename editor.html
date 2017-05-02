@@ -24,20 +24,62 @@
 		return 0;
 	}
     </script>
+<style>
+.navbar {
+        background-color: #cacaca;
+        display: flex;
+}
+.col {
+        display:inline-block;
+        margin: auto 10px;
+}
+#search {
+        width: 400px;
+        float:right;
+        margin-left: auto;
+        input {
+                width: 300px;
+        }
+}
+</style>
     </head>
 <body>
-<table style=" width: 100vw; height: 50px; background-color: #fafafb; box-shadow: 0 1px 0 rgba(12,13,14,0.15); border-top: 3px solid #F48024; position:fixed; top:0;" >
+<div class="navbar">
+  <div class="col">
+        <img src="/res/stoat.png" style="height: 50px; width:auto;">
+  </div>
+  <div class="col">
+        <a href="http://evolvejs.tk" style="font-size:16px; text-decoration: none;">
+                <h1 style="color: black;margin: 5px 0;">Evolve.js<br>Adaptive web standard</h1>
+        </a>
+  </div>
+  <div class="col">
+        <h3 style="text-align:center; font-size:16px;"><a href='http://evolvejs.tk/editor.html'>Create New Design Spec</a></h3>
+  </div>
+  <div class="col" id="search">
+        <form action="#" onsubmit="alert('todo')">
+        <img src="https://azure.microsoft.com/svghandler/search/?width=50&height=40" style="    height: 40px; position: relative; top: 15px;"  onclick="alert('todo')">
+        <input type="text" name="search" style="width: 50%; height: 40px; font-size: 15px; border-radius: 5px;"  placeholder="search for design" ></td>
+        </form>
+  </div>
+</div>
+
+<!--
+<table style="z-index:1000000; width: 100vw; height: 50px; background-color: #fafafb; box-shadow: 0 1px 0 rgba(12,13,14,0.15); border-top: 3px solid #F48024; position:fixed; top:0;" >
 <tr style=" width: 100vw; height: 50px; background-color: #fafafb; box-shadow: 0 1px 0 rgba(12,13,14,0.15); border-top: 3px solid #F48024;">
 <td><img src="/res/stoat.png" style="height: 50px; width:auto;"></td>
-<td style="margin-top:auto; margin-bottom:auto; text-align:center;"><a href="http://evolvejs.tk"><h1 style="color: black">Evolve.js - The collective web standard</h1></a></td>
+<td style="margin-top:auto; margin-bottom:auto; text-align:center;">
+	<a href="http://evolvejs.tk" style="font-size:16px; text-decoration: none;">
+		<h1 style="margin: 5px 0; color: black;">Evolve.js<br>Adaptive web standard</h1></a></td>
 <td><h3 style="text-align:center;"><a href='http://evolvejs.tk/editor.html'>Create New Design Spec</a></h3></td>
 <td style="width:50%; text-align: center">
 <form action="#" onsubmit="alert('todo')">
-<img src="https://azure.microsoft.com/svghandler/search/?width=25&height=20" onclick="alert('todo')">
-<input type="text" name="search" style="width:50%"  placeholder="search for design" ></td>
+<img src="https://azure.microsoft.com/svghandler/search/?width=50&height=40" style="    height: 40px; position: relative; top: 15px;"  onclick="alert('todo')">
+<input type="text" name="search" style="width: 50%; height: 40px; font-size: 15px; border-radius: 5px;"  placeholder="search for design" ></td>
 </form>
 </tr></table>
-<div style="width: 66%; margin-top: 100px; margin-left: auto; margin-right: auto;">
+-->
+<div style="width: 66%; margin-top: 120px; margin-left: auto; margin-right: auto;">
 
 <div class="block_params" style="display: none;" title="Block properties">
     <div>Title: <input name="name" type="text"></div>
